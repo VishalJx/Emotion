@@ -59,7 +59,10 @@ w = Counter(emotion_list)
 
 #Coverting the above dictionary into list and printing the dominant emotion which will be at index 0.
 result_list = list(w.items())
-final = result_list[0]
-#print(final)
-final_word, final_emotion = final
-print(final_word)
+try:
+    final = result_list[0]
+    #print(final)
+    final_word, final_emotion = final
+    print(final_word)
+except:
+    print("Cannot find emotions")
