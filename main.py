@@ -61,8 +61,24 @@ w = Counter(emotion_list)
 result_list = list(w.items())
 try:
     final = result_list[0]
-    #print(final)
     final_word, final_emotion = final
-    print(final_word)
+    print("/--------------------/")
+    print("You are feeling: "+final_word)
+    print("/--------------------/")
+    print("Movies recommended for you are:-\n")
 except:
     print("Cannot find emotions")
+
+#333333333333333333333
+movie_list=[]
+with open('movies.txt','r') as movies:
+    # print(movies)
+    for movie in movies:
+        clear = movie.replace("\n","").replace("'", "").replace(",","").capitalize().strip()
+        try:
+            [move, emotion] = clear.split(':')
+        except:
+            pass
+        if final_word == emotion:
+            print(move)
+
